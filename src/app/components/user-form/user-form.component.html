@@ -1,0 +1,6 @@
+<h2>Dodaj korisnika</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input formControlName="name" placeholder="Ime" />
+      <input formControlName="email" placeholder="Email" />
+      <button type="submit">Dodaj</button>
+    </form>

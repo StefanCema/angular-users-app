@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Petar Petrovic",
+      "email": "petar@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Jelena Jovic",
+      "email": "jelena@example.com"
+    },
+    {
+      "id": "f265",
+      "name": "Anja",
+      "email": "anja@gmail.com"
+    },
+    {
+      "id": "a24b",
+      "name": "cetko",
+      "email": "cetko@gmail.com"
+    }
+  ]
+}

@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'user-management';
+ refreshSignal = 0;
+
+  onUserAdded() {
+    this.refreshSignal++; 
+  }
 }
