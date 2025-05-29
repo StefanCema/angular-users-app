@@ -1,8 +1,31 @@
 <div class="container">
   <h2>Login</h2>
+
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="username" placeholder="Korisničko ime" />
-    <input type="password" formControlName="password" placeholder="Lozinka" />
+    <input
+      type="text"
+      formControlName="username"
+      [class.invalid]="hasError('username')"
+      placeholder="Korisničko ime"
+    />
+    <div *ngIf="hasError('username')" class="error">
+      Korisničko ime je obavezno.
+    </div>
+
+    <input
+      type="password"
+      formControlName="password"
+      [class.invalid]="hasError('password')"
+      placeholder="Lozinka"
+    />
+    <div *ngIf="hasError('password')" class="error">
+      Lozinka je obavezna.
+    </div>
+
     <button type="submit">Prijavi se</button>
+
+    <div *ngIf="loginError" class="error general">
+      Pogrešni kredencijali.
+    </div>
   </form>
 </div>

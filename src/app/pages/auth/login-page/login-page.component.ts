@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 
@@ -11,6 +11,7 @@ import { AuthService } from '../../../core/services/auth.service';
 })
 export class LoginPageComponent implements OnInit {
   form!: FormGroup;
+  loginError = false;
 
   constructor(
     private fb: FormBuilder,
@@ -20,18 +21,30 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      username: [''],
-      password: [''],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
   onSubmit() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
     const { username, password } = this.form.value;
-    const success = this.auth.login(username || '', password || '');
+    const success = this.auth.login(username, password);
+
     if (success) {
+      this.loginError = false;
       this.router.navigate(['/users']);
     } else {
-      alert('Neispravni kredencijali');
+      this.loginError = true;
     }
+  }
+
+  hasError(controlName: string): boolean {
+    const control = this.form.get(controlName);
+    return (control?.invalid && control?.touched) || false;
   }
 }
