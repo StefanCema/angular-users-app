@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="left">
+    <div class="logo">MyApp.</div>
+    <nav class="nav-links">
+      <a routerLink="/">Početna</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/users">Korisnici</a>
+      <a *ngIf="auth.isLoggedIn()" routerLink="/users/add">Dodaj korisnika</a>
+    </nav>
+  </div>
+
+  <div class="right">
+    <div *ngIf="auth.isLoggedIn()" class="user-info">
+      <div class="avatar">{{ initials }}</div>
+      <div class="username">
+        <div class="welcome">Hi, Welcome</div>
+        <div class="name">{{ username }}</div>
+      </div>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+
+    <button *ngIf="!auth.isLoggedIn()" class="login-btn" (click)="login()">Login</button>
+  </div>
+</header>

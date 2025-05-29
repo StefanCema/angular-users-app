@@ -1,10 +1,2 @@
-<nav>
-  <a routerLink="/">Početna</a> |
-  <a routerLink="/users">Korisnici</a> |
-  <a routerLink="/users/add">Dodaj korisnika</a>
-  <button *ngIf="auth.isLoggedIn()"  (click)="logout()">Logout</button>
-</nav>
-
-<hr />
-
+<app-header></app-header>
 <router-outlet></router-outlet>
