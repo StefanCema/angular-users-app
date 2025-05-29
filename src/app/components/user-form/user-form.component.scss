@@ -2,6 +2,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  background-color: var(--container-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--text-color);
 }
 
 input, button {
@@ -10,18 +14,25 @@ input, button {
 }
 
 input {
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
   border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--button-bg);
 }
 
 button {
-  background-color: #3498db;
-  color: white;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   cursor: pointer;
   border-radius: 4px;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: var(--button-hover-bg);
 }

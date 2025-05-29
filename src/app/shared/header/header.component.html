@@ -17,7 +17,9 @@
       </div>
       <button class="logout-btn" (click)="logout()">Logout</button>
     </div>
-
+    <button class="theme-toggle" (click)="toggleTheme()">
+  {{ currentTheme === 'dark' ? '🌙' : '☀️' }}
+    </button>
     <button *ngIf="!auth.isLoggedIn()" class="login-btn" (click)="login()">Login</button>
   </div>
 </header>

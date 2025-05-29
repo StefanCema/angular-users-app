@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: white;
-  border-bottom: 1px solid #eee;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
   font-family: Arial, sans-serif;
 
   .left {
@@ -15,14 +15,18 @@
     .logo {
       font-weight: bold;
       font-size: 1.5rem;
-      color: #212121;
+      color: var(--primary-text);
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #333;
+      color: var(--primary-text);
       margin-left: 1rem;
       font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
     }
   }
 
@@ -36,18 +40,18 @@
       align-items: center;
       gap: 0.5rem;
 
-      .avatar {
+        .avatar {
         width: 36px;
         height: 36px;
-        background-color: #8ab4f8;
-        color: white;
+        background-color: var(--avatar-bg);
+        color: var(--avatar-text);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
         font-size: 14px;
-      }
+        }
 
       .username {
         display: flex;
@@ -55,35 +59,53 @@
 
         .welcome {
           font-size: 10px;
-          color: #888;
+          color: var(--secondary-text);
         }
 
         .name {
           font-weight: 600;
+          color: var(--primary-text);
         }
       }
 
       .dropdown-icon {
         font-size: 20px;
-        color: #555;
+        color: var(--secondary-text);
       }
 
       .logout-btn {
         background: none;
         border: none;
-        color: #888;
+        color: var(--secondary-text);
         margin-left: 0.5rem;
         cursor: pointer;
+      }
+
+      .logout-btn:hover {
+        color: var(--primary-text);
       }
     }
 
     .login-btn {
-      background-color: #007bff;
-      color: white;
+      background-color: var(--button-bg);
+      color: var(--button-text);
       padding: 0.4rem 1rem;
       border: none;
       border-radius: 20px;
       cursor: pointer;
     }
+
+    .login-btn:hover {
+      background-color: var(--button-hover-bg);
+    }
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--primary-text);
+    margin-left: 1rem;
   }
 }

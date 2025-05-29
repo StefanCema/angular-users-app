@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
+import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,15 @@ import { AuthService } from '../../core/services/auth.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  constructor(public auth: AuthService, private router: Router) {}
+  currentTheme = 'light';
+
+  constructor(
+    public auth: AuthService,
+    private router: Router,
+    private themeService: ThemeService
+  ) {
+    this.currentTheme = this.themeService.getCurrentTheme();
+  }
 
   logout() {
     this.auth.logout();
@@ -29,5 +38,10 @@ export class HeaderComponent {
       .map((n) => n[0].toUpperCase())
       .join('')
       .slice(0, 2);
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+    this.currentTheme = this.themeService.getCurrentTheme();
   }
 }

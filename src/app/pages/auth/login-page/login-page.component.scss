@@ -1,13 +1,13 @@
 h2 {
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--primary-text);
 }
 
 .container {
   max-width: 400px;
   margin: 100px auto;
   padding: 2rem;
-  background-color: #fff;
+  background-color: var(--container-bg);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -22,38 +22,40 @@ form {
 input {
   padding: 0.75rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   outline: none;
-  transition: border-color 0.3s;
+  background-color: var(--input-bg);
+  color: var(--primary-text);
+  transition: border-color 0.3s, background-color 0.3s;
 
   &.invalid {
-    border-color: #e74c3c;
-    background-color: #fff5f5;
+    border-color: var(--error-color);
+    background-color: var(--input-invalid-bg);
   }
 
   &:focus {
-    border-color: #007bff;
+    border-color: var(--accent-color);
   }
 }
 
 button {
   padding: 0.75rem;
   font-size: 1rem;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: var(--button-hover-bg);
   }
 }
 
 .error {
-  color: #e74c3c;
+  color: var(--error-color);
   font-size: 0.875rem;
   text-align: left;
   padding-left: 0.25rem;
@@ -63,4 +65,3 @@ button {
     margin-top: 0.5rem;
   }
 }
-
